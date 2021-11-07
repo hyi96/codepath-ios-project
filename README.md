@@ -11,16 +11,16 @@ Reference: [unit 5 slides](https://docs.google.com/presentation/d/1xnxamZ29ASoK0
 
 ## Overview
 ### Description
-RateMyProf@UCSB 
+RateMyProf@UCSB is an app where users can flexibly search for the reviews of professors and the courses they teach. Students can use it as a guide for selecting classes and avoiding terrible professors.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:** 
+- **Category:** educational, productivity, entertainment
 - **Mobile:** iOS
-- **Story:**
+- **Story:** compare professors teaching the same course, departmental/school-wide ranking of professors., comment on a professor or on one of the courses they teach
 - **Market:** UCSB Student
-- **Habit:** 
-- **Scope:**
+- **Habit:** Students would use this app most frequently during the times when they are selecting classes for a new quarter
+- **Scope:** The app initially only has professors in UCSB, but perhaps later we can add other universities
 
 ## Product Spec
 
@@ -43,29 +43,35 @@ RateMyProf@UCSB
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * user can either login as guest or sign up for a new account
+* seach screen
+   * provides a search bar for direct searching using keywords
+* category screen
+   * sort professors by department.
+* Professor profile screen
+   * overall rating
+   * ranking in department/in major
+   * courses taught
+   * comment section
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* search
+* category view
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* log in -> sign up or log in or log in as guest -> jumps to search screen
+* search -> enter key words -> shows a drop down menu of suggestions -> click a suggestion -> enter selected professor's profile screen
+* professor profile screen -> text field to enter a comment
+* category view -> shows a table of departments -> click any department and shows a list of professors ranked by their ratings
+
+
+
+
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
