@@ -22,12 +22,6 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 - **Market:** UCSB Student
 - **Habit:** Students would use this app most frequently during the times when they are selecting classes for a new quarter
 - **Scope:** The app initially only has professors in UCSB, but perhaps later we can add other universities
-=======
-- **Story:** users can look up the ratings and comments of the professors, rate professors by course, and compare with different metrics
-- **Market:** UCSB Student
-- **Habit:** users can look up the rating of professors amytime, whenever they need and stay updated
-- **Scope:** just focus on UCSB community to help student choosing the courses more informly
->>>>>>> c4ce27e6433d0ff53c9b9593f8dc29714ad9d15a
 
 ## Product Spec
 
