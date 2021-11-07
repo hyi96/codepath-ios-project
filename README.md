@@ -17,10 +17,10 @@ RateMyProf@UCSB
 [Evaluation of your app across the following attributes]
 - **Category:** 
 - **Mobile:** iOS
-- **Story:**
+- **Story:** users can look up the ratings and comments of the professors, rate professors by course, and compare with different metrics
 - **Market:** UCSB Student
-- **Habit:** 
-- **Scope:**
+- **Habit:** users can look up the rating of professors amytime, whenever they need and stay updated
+- **Scope:** just focus on UCSB community to help student choosing the courses more informly
 
 ## Product Spec
 
