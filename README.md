@@ -76,7 +76,8 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![WechatIMG78](https://user-images.githubusercontent.com/49249770/141714902-1891f212-6e5d-4743-bbf7-7643c80c542a.jpeg)
+
 
 ### [BONUS] Digital Wireframes & Mockups
 
