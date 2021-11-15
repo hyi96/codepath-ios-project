@@ -84,9 +84,19 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### Professor
+| Property      | Type     | Description                             |
+| ------------- |:--------:| ---------------------------------------:|
+| name          | String   | professor's name                        |
+| rating        | Number   | professor's rating                      |
+| department    | String   | department the professor belongs to     |
+#### Comment
+| Property      | Type     | Description                             |
+| ------------- |:--------:| ---------------------------------------:|
+| name          | String   | professor's name                        |
+| rating        | Number   | professor's rating                      |
+| department    | String   | department the professor belongs to     |
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
