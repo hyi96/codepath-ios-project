@@ -86,20 +86,33 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 ## Schema 
 ### Models
 #### Professor
-| Property      | Type     | Description                             |
-| ------------- |:--------:| ---------------------------------------:|
-| name          | String   | professor's name                        |
-| rating        | Number   | professor's rating                      |
-| department    | String   | department the professor belongs to     |
+| Property      | Type     | Description                                |
+| ------------- |:--------:| ------------------------------------------:|
+| name          | String   | professor's name                           |
+| rating        | Number   | professor's rating                         |
+| ranking       | Number   | professor's ranking in their department    |
+| department    | String   | department the professor belongs to        |
 #### Comment
-| Property      | Type     | Description                             |
-| ------------- |:--------:| ---------------------------------------:|
-| name          | String   | professor's name                        |
-| rating        | Number   | professor's rating                      |
-| department    | String   | department the professor belongs to     |
+| Property      | Type     | Description                                |
+| ------------- |:--------:| ------------------------------------------:|
+| author        | String   | username of user who posts the comment     |
+| text          | Number   | text content of the comment                |
+| date          | DateTime | date when the comment is posted            |
+| upvoteCount   | Number   | number of upvotes the comment receives     |
+| downvoteCount | Number   | number of downvotes the comment receives   | 
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
-
-
+* Search Screen
+    * search by name bar
+    * optional department field
+* Department list screen
+    * open professor list
+* Professor list screen
+    * open professor profile screen
+* Professor profile screen
+    * get the professor's info
+    * give rating
+    * open comment section
+* Comment screen
+    * get all past comments on this professor
+    * add a comment
