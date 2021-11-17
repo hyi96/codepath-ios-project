@@ -89,15 +89,19 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
 | name          | String   | professor's name                           |
-| rating        | Number   | professor's rating                         |
+| overallrating | Number   | professor's overall rating                 |
 | ranking       | Number   | professor's ranking in their department    |
 | department    | String   | department the professor belongs to        |
-#### Comment
+| ratingData    | Array    | an array containing all the comments       |
+#### Comment/Rating
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
 | author        | String   | username of user who posts the comment     |
 | text          | Number   | text content of the comment                |
 | date          | DateTime | date when the comment is posted            |
+| course        | String   | Name of the course                         |
+| difficulty    | Number   | scale from 0 to 5, 0 being the easiest     |
+| courseRating  | Number   | scale from 0 to 5, 5 being the best        | 
 | upvoteCount   | Number   | number of upvotes the comment receives     |
 | downvoteCount | Number   | number of downvotes the comment receives   | 
 
