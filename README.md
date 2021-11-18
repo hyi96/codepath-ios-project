@@ -85,25 +85,36 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ## Schema 
 ### Models
+#### User
+| Property      | Type     | Description                                |
+| ------------- |:--------:| ------------------------------------------:|
+| username      | String   | username                                   |
+| password      | String   | password                                   |
+#### Department
+| Property      | Type     | Description                                |
+| ------------- |:--------:| ------------------------------------------:|
+| username      | String   | username                                   |
+| password      | String   | password                                   |
+| professorArray| Array    | an array of Professors' objectIds
 #### Professor
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
 | name          | String   | professor's name                           |
-| overallrating | Number   | professor's overall rating                 |
-| ranking       | Number   | professor's ranking in their department    |
-| department    | String   | department the professor belongs to        |
-| ratingData    | Array    | an array containing all the comments       |
-#### Comment/Rating
+| overallRating | Number   | professor's overall rating                 |
+| department    | Relation | points to the professor's department       |
+| ratingArray   | Array    | an array of Ratings' objectIds             |
+#### Rating
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| author        | String   | username of user who posts the comment     |
-| text          | Number   | text content of the comment                |
+| author        | Retation | points to the user that gives the rating   |
+| professor     | Relation | points to the professor                    |
+| comment       | String   | text content of the comment                |
 | date          | DateTime | date when the comment is posted            |
 | course        | String   | Name of the course                         |
 | difficulty    | Number   | scale from 0 to 5, 0 being the easiest     |
-| courseRating  | Number   | scale from 0 to 5, 5 being the best        | 
-| upvoteCount   | Number   | number of upvotes the comment receives     |
-| downvoteCount | Number   | number of downvotes the comment receives   | 
+| score         | Number   | scale from 0 to 5, 5 being the best        | 
+| upvoteCount   | Number   | number of upvotes the rating receives      |
+| downvoteCount | Number   | number of downvotes the rating receives    | 
 
 ### Networking
 * Search Screen
