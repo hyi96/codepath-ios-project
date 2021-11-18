@@ -1,0 +1,6 @@
+framework module Pods_RMPucsb {
+  umbrella header "Pods-RMPucsb-umbrella.h"
+
+  export *
+  module * { export * }
+}
