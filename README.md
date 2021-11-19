@@ -1,5 +1,3 @@
-Reference: [unit 5 slides](https://docs.google.com/presentation/d/1xnxamZ29ASoK027LJd0Cc15Ve-gHo1UJkkZkZHmtDvo/edit#slide=id.gf82d3a484c_0_98)
-
 # RateMyProf@UCSB
 
 ## Table of Contents
@@ -16,7 +14,6 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 ### App Evaluation
 - **Category:** educational, productivity, entertainment
 - **Mobile:** iOS
-<<<<<<< HEAD
 - **Story:** compare professors teaching the same course, departmental/school-wide ranking of professors., comment on a professor or on one of the courses they teach
 - **Market:** UCSB Student
 - **Habit:** Students would use this app most frequently during the times when they are selecting classes for a new quarter
@@ -29,47 +26,59 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 **Required Must-have Stories**
 
 * users can look up the ratings and comments of the professors 
-* users can sort rating by date, course
 * users can rate professors by course
+* users can sort rating by date, course
 * users can view key words of a rated professor
 
 **Optional Nice-to-have Stories**
 
-* users can compare a professors's rating with the average teaching rating of the same class
-* Users can compare a professors's rating with the average rating of the department
+* users can compare professors's rating by courses
+* Users can compare a professors's within department 
 * users can visualize the comparison statistics
-* users can view professors with top ratings in a department or a class
+* users only acccess through UCSB Authetication 
+* users has their own profile page
+* comments include commentor's info (year, major, etc..)
+* users has option to post comments anonumously
 
 
 ### 2. Screen Archetypes
 
-* Login
-   * user can either login as guest or sign up for a new account
-* seach screen
-   * provides a search bar for direct searching using keywords
-* category screen
-   * sort professors by department.
-* Professor profile screen
-   * overall rating
-   * ranking in department/in major
-   * courses taught
-   * comment section
+* Login 
+   * users login by UCSB NetID
+* Seach 
+   * search professors by name, department(optional)
+* Department list
+   * navigate to professor list in each department
+* Professor list
+   * list of professors under a department
+* Professor Comments 
+   * name, department, profile photo, key words
+   * course selector (default overall) -> overall rating: quality, difficulty, would take again
+   * comment lists: quality, difficulty, would take again, quarter taken, grade received, comments
+* Add Comments 
+   * select department, professors (if not add new)
+   * select courses (if not add new)
+   * quarter taken
+   * grade received
+   * ratings: quality, difficulty, would take again
+   * 3 key workds
+   * comments
+
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* search
-* category view
+* Search -> Professor profile
+* Add Comments -> Add Comments -> Professor Comments
+* Department list -> Department list -> Professor list -> Professor Comments
 
 **Flow Navigation** (Screen to Screen)
 
-* log in -> sign up or log in or log in as guest -> jumps to search screen
-* search -> enter key words -> shows a drop down menu of suggestions -> click a suggestion -> enter selected professor's profile screen
-* professor profile screen -> text field to enter a comment
-* category view -> shows a table of departments -> click any department and shows a list of professors ranked by their ratings
-
-
+* Log in -> sign up or log in or log in as guest -> Search 
+* Search -> Professor Comments/Add Comments(no reviews)
+* Department list -> Professor list -> Professor Comments -> Add Comments
+* Add Comments -> Professor Comments
 
 
 
