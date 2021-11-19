@@ -6,16 +6,55 @@
 //
 
 import UIKit
+import Parse
 
-class DepartmentListViewController: UIViewController {
-
+class DepartmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var departments = [PFObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let query = PFQuery(className: "Department")
+        query.includeKey("objectId")
+        
+        query.limit = 50
+        query.findObjectsInBackground { departments, error in
+            if departments != nil {
+                self.departments = departments!
+                self.tableView.reloadData()
+            }
+        }
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return departments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DepartmentCell") as! DepartmentCell
+        let department = departments[indexPath.row]
+        cell.departmentNameLabel.text = department["name"] as! String
+        
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let department = departments[indexPath.row]
+        
+        let professorListViewController = segue.destination as! ProfessorListViewController
+        professorListViewController.department = department
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -16,6 +16,9 @@
 		24D1BB452745C8F70095AD88 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB442745C8F70095AD88 /* LoginViewController.swift */; };
 		24D1BB492745C97E0095AD88 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB482745C97E0095AD88 /* DepartmentListViewController.swift */; };
 		24D1BB4B2745C9D90095AD88 /* ProfessorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB4A2745C9D90095AD88 /* ProfessorListViewController.swift */; };
+		24D1BB4D2745F4D20095AD88 /* ProfessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB4C2745F4D20095AD88 /* ProfessorViewController.swift */; };
+		24D1BB4F2745FB8F0095AD88 /* DepartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB4E2745FB8F0095AD88 /* DepartmentCell.swift */; };
+		24D1BB512745FBCD0095AD88 /* ProfessorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB502745FBCD0095AD88 /* ProfessorCell.swift */; };
 		F10D75678F1BE70B0F0E411F /* Pods_RMPucsb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D3BB9FF14F7B82D12AD88C /* Pods_RMPucsb.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		24D1BB442745C8F70095AD88 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		24D1BB482745C97E0095AD88 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
 		24D1BB4A2745C9D90095AD88 /* ProfessorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorListViewController.swift; sourceTree = "<group>"; };
+		24D1BB4C2745F4D20095AD88 /* ProfessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorViewController.swift; sourceTree = "<group>"; };
+		24D1BB4E2745FB8F0095AD88 /* DepartmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCell.swift; sourceTree = "<group>"; };
+		24D1BB502745FBCD0095AD88 /* ProfessorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorCell.swift; sourceTree = "<group>"; };
 		71D3BB9FF14F7B82D12AD88C /* Pods_RMPucsb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMPucsb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,12 +87,15 @@
 				2400EB562745BFBB0082689E /* SceneDelegate.swift */,
 				2400EB582745BFBB0082689E /* ViewController.swift */,
 				2400EB5A2745BFBB0082689E /* Main.storyboard */,
+				24D1BB502745FBCD0095AD88 /* ProfessorCell.swift */,
 				2400EB5D2745BFBB0082689E /* Assets.xcassets */,
 				2400EB5F2745BFBB0082689E /* LaunchScreen.storyboard */,
 				2400EB622745BFBB0082689E /* Info.plist */,
 				24D1BB442745C8F70095AD88 /* LoginViewController.swift */,
 				24D1BB482745C97E0095AD88 /* DepartmentListViewController.swift */,
 				24D1BB4A2745C9D90095AD88 /* ProfessorListViewController.swift */,
+				24D1BB4C2745F4D20095AD88 /* ProfessorViewController.swift */,
+				24D1BB4E2745FB8F0095AD88 /* DepartmentCell.swift */,
 			);
 			path = RMPucsb;
 			sourceTree = "<group>";
@@ -218,8 +227,11 @@
 				24D1BB492745C97E0095AD88 /* DepartmentListViewController.swift in Sources */,
 				24D1BB452745C8F70095AD88 /* LoginViewController.swift in Sources */,
 				24D1BB4B2745C9D90095AD88 /* ProfessorListViewController.swift in Sources */,
+				24D1BB4F2745FB8F0095AD88 /* DepartmentCell.swift in Sources */,
 				2400EB592745BFBB0082689E /* ViewController.swift in Sources */,
 				2400EB552745BFBB0082689E /* AppDelegate.swift in Sources */,
+				24D1BB4D2745F4D20095AD88 /* ProfessorViewController.swift in Sources */,
+				24D1BB512745FBCD0095AD88 /* ProfessorCell.swift in Sources */,
 				2400EB572745BFBB0082689E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
