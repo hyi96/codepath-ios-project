@@ -93,36 +93,46 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ## Schema 
 ### Models
-#### User
+#### Users
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
 | username      | String   | username                                   |
 | password      | String   | password                                   |
-#### Department
+#### Departments
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| username      | String   | username                                   |
-| password      | String   | password                                   |
-| professorArray| Array    | an array of Professors' objectIds
-#### Professor
+| deptID        | Number   | unique id for departments                  |
+| deptName      | String   | departments' names                         |
+| professorList | Array    | an array of Professors' ID in each dept    |
+#### Professors
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| name          | String   | professor's name                           |
-| overallRating | Number   | professor's overall rating                 |
-| department    | Relation | points to the professor's department       |
-| ratingArray   | Array    | an array of Ratings' objectIds             |
-#### Rating
+| profID        | Number   | unique id for professors                   |
+| profName      | String   | professors' name                           |
+| deptName      | Relation | refer to the professors' department        |
+
+
+#### Rates
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| author        | Retation | points to the user that gives the rating   |
-| professor     | Relation | points to the professor                    |
+| rater         | Retation | refer to username                          |
+| profName      | Relation | refer to profName                          |
+| deptName      | Relation | refer to deptName                          |
+| rates         | array    | [quality, difficulty, take_Again]          |
+| keyword       | array    | list of 3 keyword given by rater           |
 | comment       | String   | text content of the comment                |
-| date          | DateTime | date when the comment is posted            |
-| course        | String   | Name of the course                         |
-| difficulty    | Number   | scale from 0 to 5, 0 being the easiest     |
-| score         | Number   | scale from 0 to 5, 5 being the best        | 
+| createdAt     | DateTime | date when post is created                  |
+| updatedAt     | DateTime | date when post is updated                  |
+| courseID      | Number   | unique id for courses                      |
+| courseName    | String   | UCSB course code                           |
+| grade         | String   | grade got for the course                   |
+| difficulty    | Number   | scale from 0 to 5, 5 being the hardest     |
+| quality       | Number   | scale from 0 to 5, 5 being the best        | 
+| takeAgain     | Bool     | 1 being would take again, 0 conversely     | 
 | upvoteCount   | Number   | number of upvotes the rating receives      |
 | downvoteCount | Number   | number of downvotes the rating receives    | 
+
+
 
 ### Networking
 * Search Screen
