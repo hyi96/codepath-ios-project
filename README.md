@@ -118,7 +118,7 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 | rater         | Retation | refer to username                          |
 | profName      | Relation | refer to profName                          |
 | deptName      | Relation | refer to deptName                          |
-| rates         | array    | [quality, difficulty, take_Again]          |
+| ratings       | array    | [quality, difficulty, take_Again]          |
 | keyword       | array    | list of 3 keyword given by rater           |
 | comment       | String   | text content of the comment                |
 | createdAt     | DateTime | date when post is created                  |
@@ -137,6 +137,21 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 ### Networking
 * Search Screen
     * (Read/GET) Query ratings where professor name is profName, department name is deptNmae (optional)
+    ```swift
+    let query = PFQuery(className:"ratings")
+    query.whereKey("profName", equalTo:"...")
+    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+      if let error = error {
+          // Log details of the failure
+          print(error.localizedDescription)
+      } else if let ratings = ratings {
+          // The find succeeded.
+          print("Successfully retrieved \(objects.count) scores.")
+          // Do something with the ratings
+          }
+      }
+    }
+    ```
 * Department List Screen
     * (Read/GET) Query list of departments in the selected department
 * Professor List Screen
@@ -145,5 +160,34 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
     * (Read/GET)Query comments page of the selected professor
     * (Update/PUT) Update ratings and comments by course filter
     * (Update/PUT) Upvote or downvote for a comment
+    ```swift
+    let query = PFQuery(className:"upvoteCount")
+    query.getObjectInBackground(withId: "...") { (vote: PFObject?, error: Error?) in
+        if let error = error {
+            print(error.localizedDescription)
+        } else if let vote = vote {
+            vote["upvoteCount"] = ...
+            vote["downvoteCount"] = ...
+            vote.saveInBackground()
+        }
+    }
+    ```
 * Add Comments Screen
     * (Creat/POST) Create a new comments for the professor
+    ```swift
+    let newRating = PFObject(className:"ratings")
+    newRating["profName"] = ...
+    newRating["deptName"] = ...
+    newRating["courseName"] = ...
+    newRating["ratings"] = ...
+    ...
+    newRating.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }
+    ```
+
+
