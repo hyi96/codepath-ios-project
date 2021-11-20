@@ -136,16 +136,14 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ### Networking
 * Search Screen
-    * search by name bar
-    * optional department field
-* Department list screen
-    * open professor list
-* Professor list screen
-    * open professor profile screen
-* Professor profile screen
-    * get the professor's info
-    * give rating
-    * open comment section
-* Comment screen
-    * get all past comments on this professor
-    * add a comment
+    * (Read/GET) Query ratings where professor name is profName, department name is deptNmae (optional)
+* Department List Screen
+    * (Read/GET) Query list of departments in the selected department
+* Professor List Screen
+    *  (Read/GET) Query list of professors in the selected department
+* Comments Screen
+    * (Read/GET)Query comments page of the selected professor
+    * (Update/PUT) Update ratings and comments by course filter
+    * (Update/PUT) Upvote or downvote for a comment
+* Add Comments Screen
+    * (Creat/POST) Create a new comments for the professor
