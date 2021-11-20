@@ -79,7 +79,8 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 
 ### [BONUS] Digital Wireframes & Mockups
-![Screen Shot 2021-11-20 at 1 20 41 AM](https://user-images.githubusercontent.com/49249770/142721189-7c725d7d-d218-47fe-802d-29a552c750e9.png)
+
+<img width="694" alt="Screen Shot 2021-11-20 at 11 07 01 AM" src="https://user-images.githubusercontent.com/49249770/142738250-5e6626b1-8331-49db-b626-e5a50bd6391c.png">
 
 ### [BONUS] Interactive Prototype
 ![ezgif-7-6c3f5a5976ff](https://user-images.githubusercontent.com/49249770/142721299-39b7688c-4d4d-46d2-94bc-a3a062a1981e.gif)
