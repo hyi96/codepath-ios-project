@@ -27,7 +27,8 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 **Required Must-have Stories**
 
- - [ ] users can look up the ratings and comments of the professors 
+ - [x] users can login 
+ - [x] users can look up the ratings and comments of the professors 
  - [ ] users can rate professors by course
  - [ ] users can sort rating by date, course
  - [ ] users can view key words of a rated professor
@@ -39,8 +40,9 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
  - [ ] users can visualize the comparison statistics
  - [ ] users only acccess through UCSB Authetication 
  - [ ] users has their own profile page
- - [ ] comments include commentor's info (year, major, etc..)
+ - [ ] comments include rater's info (year, major, etc..)
  - [ ] users has option to post comments anonumously
+ - [ ] users login via UCSB NetID
 
 ### 2. Screen Archetypes
 
