@@ -7,6 +7,7 @@ Reference: [unit 5 slides](https://docs.google.com/presentation/d/1xnxamZ29ASoK0
 3. [Product Spec](#Product-Spec)
 4. [Wireframes](#Wireframes)
 5. [Schema](#Schema)
+6. [Video](#Video-Walkthrough)
 
 
 ## Overview
@@ -71,9 +72,6 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 * category view -> shows a table of departments -> click any department and shows a list of professors ranked by their ratings
 
 
-
-
-
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 ![WechatIMG78](https://user-images.githubusercontent.com/49249770/141714902-1891f212-6e5d-4743-bbf7-7643c80c542a.jpeg)
@@ -131,3 +129,8 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 * Comment screen
     * get all past comments on this professor
     * add a comment
+
+## Video-Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='https://i.imgur.com/goy6nVH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
