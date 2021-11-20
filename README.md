@@ -1,3 +1,5 @@
+Reference: [unit 5 slides](https://docs.google.com/presentation/d/1xnxamZ29ASoK027LJd0Cc15Ve-gHo1UJkkZkZHmtDvo/edit#slide=id.gf82d3a484c_0_98)
+
 # RateMyProf@UCSB
 
 ## Table of Contents
@@ -12,8 +14,10 @@
 RateMyProf@UCSB is an app where users can flexibly search for the reviews of professors and the courses they teach. Students can use it as a guide for selecting classes and avoiding terrible professors.
 
 ### App Evaluation
+[Evaluation of your app across the following attributes]
 - **Category:** educational, productivity, entertainment
 - **Mobile:** iOS
+<<<<<<< HEAD
 - **Story:** compare professors teaching the same course, departmental/school-wide ranking of professors., comment on a professor or on one of the courses they teach
 - **Market:** UCSB Student
 - **Habit:** Students would use this app most frequently during the times when they are selecting classes for a new quarter
@@ -25,60 +29,48 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 **Required Must-have Stories**
 
-- [ ] users can look up the ratings and comments of the professors 
-- [ ] users can rate professors by course
-- [ ] users can sort rating by date, course
-- [ ] users can view key words of a rated professor
+* users can look up the ratings and comments of the professors 
+* users can sort rating by date, course
+* users can rate professors by course
+* users can view key words of a rated professor
 
 **Optional Nice-to-have Stories**
 
-- [ ] users can compare professors's rating by courses
-- [ ] Users can compare a professors's within department 
-- [ ] users can visualize the comparison statistics
-- [ ] users only acccess through UCSB Authetication 
-- [ ] users has their own profile page
-- [ ] comments include commentor's info (year, major, etc..)
-- [ ] users has option to post comments anonumously
+* users can compare a professors's rating with the average teaching rating of the same class
+* Users can compare a professors's rating with the average rating of the department
+* users can visualize the comparison statistics
+* users can view professors with top ratings in a department or a class
 
 
 ### 2. Screen Archetypes
 
-* Login 
-   * users login by UCSB NetID
-* Seach 
-   * search professors by name, department(optional)
-* Department list
-   * navigate to professor list in each department
-* Professor list
-   * list of professors under a department
-* Professor Comments 
-   * name, department, profile photo, key words
-   * course selector (default overall) -> overall rating: quality, difficulty, would take again
-   * comment lists: quality, difficulty, would take again, quarter taken, grade received, comments
-* Add Comments 
-   * select department, professors (if not add new)
-   * select courses (if not add new)
-   * quarter taken
-   * grade received
-   * ratings: quality, difficulty, would take again
-   * 3 key workds
-   * comments
-
+* Login
+   * user can either login as guest or sign up for a new account
+* seach screen
+   * provides a search bar for direct searching using keywords
+* category screen
+   * sort professors by department.
+* Professor profile screen
+   * overall rating
+   * ranking in department/in major
+   * courses taught
+   * comment section
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Search -> Professor profile
-* Add Comments -> Add Comments -> Professor Comments
-* Department list -> Department list -> Professor list -> Professor Comments
+* search
+* category view
 
 **Flow Navigation** (Screen to Screen)
 
-* Log in -> sign up or log in or log in as guest -> Search 
-* Search -> Professor Comments/Add Comments(no reviews)
-* Department list -> Professor list -> Professor Comments -> Add Comments
-* Add Comments -> Professor Comments
+* log in -> sign up or log in or log in as guest -> jumps to search screen
+* search -> enter key words -> shows a drop down menu of suggestions -> click a suggestion -> enter selected professor's profile screen
+* professor profile screen -> text field to enter a comment
+* category view -> shows a table of departments -> click any department and shows a list of professors ranked by their ratings
+
+
 
 
 
@@ -93,101 +85,49 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ## Schema 
 ### Models
-#### Users
+#### User
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
 | username      | String   | username                                   |
 | password      | String   | password                                   |
-#### Departments
+#### Department
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| deptID        | Number   | unique id for departments                  |
-| deptName      | String   | departments' names                         |
-| professorList | Array    | an array of Professors' ID in each dept    |
-#### Professors
+| username      | String   | username                                   |
+| password      | String   | password                                   |
+| professorArray| Array    | an array of Professors' objectIds
+#### Professor
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| profID        | Number   | unique id for professors                   |
-| profName      | String   | professors' name                           |
-| deptName      | Relation | refer to the professors' department        |
-
-
-#### Rates
+| name          | String   | professor's name                           |
+| overallRating | Number   | professor's overall rating                 |
+| department    | Relation | points to the professor's department       |
+| ratingArray   | Array    | an array of Ratings' objectIds             |
+#### Rating
 | Property      | Type     | Description                                |
 | ------------- |:--------:| ------------------------------------------:|
-| rater         | Retation | refer to username                          |
-| profName      | Relation | refer to profName                          |
-| deptName      | Relation | refer to deptName                          |
-| ratings       | array    | [quality, difficulty, take_Again]          |
-| keyword       | array    | list of 3 keyword given by rater           |
+| author        | Retation | points to the user that gives the rating   |
+| professor     | Relation | points to the professor                    |
 | comment       | String   | text content of the comment                |
-| createdAt     | DateTime | date when post is created                  |
-| updatedAt     | DateTime | date when post is updated                  |
-| courseID      | Number   | unique id for courses                      |
-| courseName    | String   | UCSB course code                           |
-| grade         | String   | grade got for the course                   |
-| difficulty    | Number   | scale from 0 to 5, 5 being the hardest     |
-| quality       | Number   | scale from 0 to 5, 5 being the best        | 
-| takeAgain     | Bool     | 1 being would take again, 0 conversely     | 
+| date          | DateTime | date when the comment is posted            |
+| course        | String   | Name of the course                         |
+| difficulty    | Number   | scale from 0 to 5, 0 being the easiest     |
+| score         | Number   | scale from 0 to 5, 5 being the best        | 
 | upvoteCount   | Number   | number of upvotes the rating receives      |
 | downvoteCount | Number   | number of downvotes the rating receives    | 
 
-
-
 ### Networking
 * Search Screen
-    * (Read/GET) Query ratings where professor name is profName, department name is deptNmae (optional)
-    ```swift
-    let query = PFQuery(className:"ratings")
-    query.whereKey("profName", equalTo:"...")
-    query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
-      if let error = error {
-          // Log details of the failure
-          print(error.localizedDescription)
-      } else if let ratings = ratings {
-          // The find succeeded.
-          print("Successfully retrieved \(objects.count) scores.")
-          // Do something with the ratings
-          }
-      }
-    }
-    ```
-* Department List Screen
-    * (Read/GET) Query list of departments in the selected department
-* Professor List Screen
-    *  (Read/GET) Query list of professors in the selected department
-* Comments Screen
-    * (Read/GET)Query comments page of the selected professor
-    * (Update/PUT) Update ratings and comments by course filter
-    * (Update/PUT) Upvote or downvote for a comment
-    ```swift
-    let query = PFQuery(className:"upvoteCount")
-    query.getObjectInBackground(withId: "...") { (vote: PFObject?, error: Error?) in
-        if let error = error {
-            print(error.localizedDescription)
-        } else if let vote = vote {
-            vote["upvoteCount"] = ...
-            vote["downvoteCount"] = ...
-            vote.saveInBackground()
-        }
-    }
-    ```
-* Add Comments Screen
-    * (Creat/POST) Create a new comments for the professor
-    ```swift
-    let newRating = PFObject(className:"ratings")
-    newRating["profName"] = ...
-    newRating["deptName"] = ...
-    newRating["courseName"] = ...
-    newRating["ratings"] = ...
-    ...
-    newRating.saveInBackground { (succeeded, error)  in
-        if (succeeded) {
-            // The object has been saved.
-        } else {
-            // There was a problem, check error.description
-        }
-    }
-    ```
-
-
+    * search by name bar
+    * optional department field
+* Department list screen
+    * open professor list
+* Professor list screen
+    * open professor profile screen
+* Professor profile screen
+    * get the professor's info
+    * give rating
+    * open comment section
+* Comment screen
+    * get all past comments on this professor
+    * add a comment

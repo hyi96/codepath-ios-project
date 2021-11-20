@@ -8,6 +8,7 @@
 import UIKit
 import Parse
 
+//basically identical to Parstagram login
 class LoginViewController: UIViewController {
 
     @IBOutlet var usernameField: UITextField!

@@ -13,7 +13,7 @@ class ProfessorListViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet var tableView: UITableView!
     
     var professors = [PFObject]()
-    var department = PFObject(className: "Department")
+    var department = PFObject(className: "Department") //was assigned to the selected department
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ProfessorListViewController: UIViewController, UITableViewDelegate, UITabl
         
         let query = PFQuery(className:"Professor")
         query.includeKey("objectId")
-        query.whereKey("department", equalTo: department)
+        query.whereKey("department", equalTo: department) //only find professors who point to department object
         query.findObjectsInBackground { professors, error in
             if professors != nil {
                 self.professors = professors!

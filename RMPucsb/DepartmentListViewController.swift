@@ -24,7 +24,7 @@ class DepartmentListViewController: UIViewController, UITableViewDelegate, UITab
         let query = PFQuery(className: "Department")
         query.includeKey("objectId")
         
-        query.limit = 50
+        //return all objects from Department class
         query.findObjectsInBackground { departments, error in
             if departments != nil {
                 self.departments = departments!
@@ -51,6 +51,8 @@ class DepartmentListViewController: UIViewController, UITableViewDelegate, UITab
         let department = departments[indexPath.row]
         
         let professorListViewController = segue.destination as! ProfessorListViewController
+        
+        //pass selected department object to ProfessorList screen
         professorListViewController.department = department
         
         tableView.deselectRow(at: indexPath, animated: true)
