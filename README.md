@@ -1,5 +1,3 @@
-Reference: [unit 5 slides](https://docs.google.com/presentation/d/1xnxamZ29ASoK027LJd0Cc15Ve-gHo1UJkkZkZHmtDvo/edit#slide=id.gf82d3a484c_0_98)
-
 # RateMyProf@UCSB
 
 ## Table of Contents
@@ -18,7 +16,6 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 [Evaluation of your app across the following attributes]
 - **Category:** educational, productivity, entertainment
 - **Mobile:** iOS
-<<<<<<< HEAD
 - **Story:** compare professors teaching the same course, departmental/school-wide ranking of professors., comment on a professor or on one of the courses they teach
 - **Market:** UCSB Student
 - **Habit:** Students would use this app most frequently during the times when they are selecting classes for a new quarter
@@ -30,18 +27,20 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 **Required Must-have Stories**
 
-* users can look up the ratings and comments of the professors 
-* users can sort rating by date, course
-* users can rate professors by course
-* users can view key words of a rated professor
+ - [ ] users can look up the ratings and comments of the professors 
+ - [ ] users can rate professors by course
+ - [ ] users can sort rating by date, course
+ - [ ] users can view key words of a rated professor
 
-**Optional Nice-to-have Stories**
+ **Optional Nice-to-have Stories**
 
-* users can compare a professors's rating with the average teaching rating of the same class
-* Users can compare a professors's rating with the average rating of the department
-* users can visualize the comparison statistics
-* users can view professors with top ratings in a department or a class
-
+ - [ ] users can compare professors's rating by courses
+ - [ ] Users can compare a professors's within department 
+ - [ ] users can visualize the comparison statistics
+ - [ ] users only acccess through UCSB Authetication 
+ - [ ] users has their own profile page
+ - [ ] comments include commentor's info (year, major, etc..)
+ - [ ] users has option to post comments anonumously
 
 ### 2. Screen Archetypes
 
@@ -116,21 +115,63 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 
 ### Networking
 * Search Screen
-    * search by name bar
-    * optional department field
-* Department list screen
-    * open professor list
-* Professor list screen
-    * open professor profile screen
-* Professor profile screen
-    * get the professor's info
-    * give rating
-    * open comment section
-* Comment screen
-    * get all past comments on this professor
-    * add a comment
+     * (Read/GET) Query ratings where professor name is profName, department name is deptNmae (optional)
+     ```swift
+     let query = PFQuery(className:"ratings")
+     query.whereKey("profName", equalTo:"...")
+     query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+       if let error = error {
+           // Log details of the failure
+           print(error.localizedDescription)
+       } else if let ratings = ratings {
+           // The find succeeded.
+           print("Successfully retrieved \(objects.count) scores.")
+           // Do something with the ratings
+           }
+       }
+     }
+     ```
+ * Department List Screen
+     * (Read/GET) Query list of departments in the selected department
+ * Professor List Screen
+ @@ -145,5 +160,34 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
+     * (Read/GET)Query comments page of the selected professor
+     * (Update/PUT) Update ratings and comments by course filter
+     * (Update/PUT) Upvote or downvote for a comment
+     ```swift
+     let query = PFQuery(className:"upvoteCount")
+     query.getObjectInBackground(withId: "...") { (vote: PFObject?, error: Error?) in
+         if let error = error {
+             print(error.localizedDescription)
+         } else if let vote = vote {
+             vote["upvoteCount"] = ...
+             vote["downvoteCount"] = ...
+             vote.saveInBackground()
+         }
+     }
+     ```
+ * Add Comments Screen
+     * (Creat/POST) Create a new comments for the professor
+     ```swift
+     let newRating = PFObject(className:"ratings")
+     newRating["profName"] = ...
+     newRating["deptName"] = ...
+     newRating["courseName"] = ...
+     newRating["ratings"] = ...
+     ...
+     newRating.saveInBackground { (succeeded, error)  in
+         if (succeeded) {
+             // The object has been saved.
+         } else {
+             // There was a problem, check error.description
+         }
+     }
+     ```
+
 
 ## Video-Walkthrough
 Here's a walkthrough of our latest progress:
 
 <img src='https://i.imgur.com/goy6nVH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
