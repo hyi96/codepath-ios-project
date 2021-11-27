@@ -20,6 +20,7 @@ class ProfessorListViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(department["name"] as! String)
@@ -52,6 +53,7 @@ class ProfessorListViewController: UIViewController, UITableViewDelegate, UITabl
         
         let professorViewController = segue.destination as! ProfessorViewController
         professorViewController.professor = professor
+        professorViewController.department = department
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

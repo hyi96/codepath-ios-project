@@ -9,30 +9,39 @@ import UIKit
 import Parse
 
 class ProfessorViewController: UIViewController {
-    
+        
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var DeptNameLabel: UILabel!
     @IBOutlet var ratingScoreLabel: UILabel!
+    @IBOutlet var takeAgainPercentLabel: UILabel!
+    @IBOutlet var DifficultyScoreLabel: UILabel!
+    
+    @IBOutlet var ratingTableView: UITableView!
+    
     
     
     var professor = PFObject(className: "Professor")
+    var department = PFObject(className: "Department")
+    
+    var ratings = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nameLabel.text = professor["name"] as! String
         ratingScoreLabel.text = "\(professor["overallRating"] as! Float)"
-        
+        DeptNameLabel.text = department["name"] as! String
+        takeAgainPercentLabel.text = "\(professor["overallTakeAgain"] as! Float)"
+        DifficultyScoreLabel.text = "\(professor["overallDifficulty"] as! Float)"
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toRatingTable" {
+            let ratingViewController = segue.destination as! RatingViewController
+            ratingViewController.professor = professor
+            
+        }
     }
-    */
-
+    
 }
