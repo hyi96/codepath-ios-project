@@ -177,5 +177,7 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
 ## Video-Walkthrough
 Here's a walkthrough of our latest progress:
 
+<img src="https://i.imgur.com/adhQDnl.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 
