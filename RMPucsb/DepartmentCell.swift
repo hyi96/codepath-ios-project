@@ -8,6 +8,7 @@
 import UIKit
 
 class DepartmentCell: UITableViewCell {
+    
     @IBOutlet var departmentNameLabel: UILabel!
     
     override func awakeFromNib() {

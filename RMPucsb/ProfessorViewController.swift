@@ -18,6 +18,10 @@ class ProfessorViewController: UIViewController {
     
     @IBOutlet var ratingTableView: UITableView!
     
+    @IBAction func rateProf(_ sender: Any) {
+        
+        
+    }
     
     
     var professor = PFObject(className: "Professor")
