@@ -156,9 +156,16 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Rate this Professor"/>
                                 <connections>
                                     <action selector="rateProf:" destination="diF-1d-7GY" eventType="touchUpInside" id="gdX-7V-fp2"/>
-                                    <segue destination="szE-wu-z1c" kind="presentation" modalPresentationStyle="fullScreen" id="3nu-2I-Mni"/>
+                                    <segue destination="szE-wu-z1c" kind="presentation" identifier="toAddRatingScreen" modalPresentationStyle="fullScreen" id="3nu-2I-Mni"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGx-oY-Fek">
+                                <rect key="frame" x="232" y="190" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49B-qE-CGR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -350,27 +357,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Tell us more about the course and professor..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c0J-z5-FcO">
-                                <rect key="frame" x="20" y="481" width="350" height="158"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-tO-Ii0">
-                                <rect key="frame" x="50.000000000000007" y="704" width="68.666666666666686" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="472-tO-Ii0">
+                                <rect key="frame" x="50.000000000000007" y="769" width="68.666666666666686" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Cancel"/>
                                 <connections>
                                     <action selector="onCancelButton:" destination="szE-wu-z1c" eventType="touchUpInside" id="rex-s2-nWS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-pl-2Rn">
-                                <rect key="frame" x="290" y="704" width="50" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
-                                <connections>
-                                    <action selector="onAddButton:" destination="szE-wu-z1c" eventType="touchUpInside" id="XUM-P8-Iw7"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. FALL 21" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wds-UF-iEI">
@@ -409,30 +401,48 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-pl-2Rn">
+                                <rect key="frame" x="290" y="769" width="50" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="onAddButton:" destination="szE-wu-z1c" eventType="touchUpInside" id="XUM-P8-Iw7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No comment." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Cl-iv-zpC">
+                                <rect key="frame" x="16" y="453" width="358" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="dNi-AN-zUy"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mcP-qI-fSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="P14-Xg-ajt" firstAttribute="top" secondItem="Z6y-tg-7jh" secondAttribute="bottom" constant="25" id="3Nj-5C-WVA"/>
                             <constraint firstItem="wIu-7Y-E0i" firstAttribute="top" secondItem="65w-bm-Y5L" secondAttribute="bottom" constant="25" id="4EA-D2-5dd"/>
+                            <constraint firstItem="mcP-qI-fSs" firstAttribute="trailing" secondItem="8Cl-iv-zpC" secondAttribute="trailing" constant="16" id="4SM-5T-bFQ"/>
+                            <constraint firstItem="8Cl-iv-zpC" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="5Tq-ZI-QdY"/>
                             <constraint firstItem="06m-Km-cLn" firstAttribute="top" secondItem="3ep-6r-5KH" secondAttribute="bottom" constant="25" id="8Ih-zI-SMe"/>
                             <constraint firstItem="Z6y-tg-7jh" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="8cU-cJ-P2g"/>
-                            <constraint firstItem="c0J-z5-FcO" firstAttribute="top" secondItem="wIu-7Y-E0i" secondAttribute="bottom" constant="16" id="Bqh-l0-Xbj"/>
                             <constraint firstItem="65w-bm-Y5L" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="GIk-Ln-3hV"/>
                             <constraint firstItem="3ep-6r-5KH" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="H4S-mM-hDo"/>
                             <constraint firstItem="3ep-6r-5KH" firstAttribute="top" secondItem="P14-Xg-ajt" secondAttribute="bottom" constant="25" id="IFt-bD-wZA"/>
-                            <constraint firstItem="mcP-qI-fSs" firstAttribute="trailing" secondItem="c0J-z5-FcO" secondAttribute="trailing" constant="20" id="JcD-hf-Zyh"/>
-                            <constraint firstItem="c0J-z5-FcO" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="20" id="PYf-rW-EoT"/>
                             <constraint firstItem="roA-D0-4UW" firstAttribute="top" secondItem="mcP-qI-fSs" secondAttribute="top" constant="50" id="S43-MT-wGo"/>
                             <constraint firstItem="mcP-qI-fSs" firstAttribute="trailing" secondItem="Ra3-pl-2Rn" secondAttribute="trailing" constant="50" id="T9Z-yA-po8"/>
                             <constraint firstItem="P14-Xg-ajt" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="TNs-99-G3w"/>
                             <constraint firstItem="06m-Km-cLn" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="ThB-cR-gwC"/>
+                            <constraint firstItem="Ra3-pl-2Rn" firstAttribute="top" secondItem="8Cl-iv-zpC" secondAttribute="bottom" constant="16" id="W9I-3b-LxO"/>
                             <constraint firstItem="wIu-7Y-E0i" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="18" id="YB7-GO-aga"/>
+                            <constraint firstItem="8Cl-iv-zpC" firstAttribute="top" secondItem="wIu-7Y-E0i" secondAttribute="bottom" constant="16" id="cOz-OL-xm5"/>
                             <constraint firstItem="65w-bm-Y5L" firstAttribute="top" secondItem="06m-Km-cLn" secondAttribute="bottom" constant="25" id="fTy-D9-fjy"/>
                             <constraint firstItem="Bbd-LW-Tk6" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="kiP-Kv-GLB"/>
-                            <constraint firstItem="Ra3-pl-2Rn" firstAttribute="top" secondItem="c0J-z5-FcO" secondAttribute="bottom" constant="16" id="oSI-eT-kG0"/>
+                            <constraint firstItem="472-tO-Ii0" firstAttribute="top" secondItem="8Cl-iv-zpC" secondAttribute="bottom" constant="16" id="pu8-xc-v0b"/>
                             <constraint firstItem="roA-D0-4UW" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="16" id="qxo-gC-Yb7"/>
-                            <constraint firstItem="472-tO-Ii0" firstAttribute="top" secondItem="c0J-z5-FcO" secondAttribute="bottom" constant="16" id="rBa-Sd-01C"/>
                             <constraint firstItem="472-tO-Ii0" firstAttribute="leading" secondItem="mcP-qI-fSs" secondAttribute="leading" constant="50" id="ryd-Ig-mAf"/>
                             <constraint firstItem="Z6y-tg-7jh" firstAttribute="top" secondItem="Bbd-LW-Tk6" secondAttribute="bottom" constant="25" id="vLl-fj-u0x"/>
                             <constraint firstItem="Bbd-LW-Tk6" firstAttribute="top" secondItem="roA-D0-4UW" secondAttribute="bottom" constant="25" id="vbc-X9-Tkx"/>
@@ -440,7 +450,7 @@
                     </view>
                     <connections>
                         <outlet property="attendanceField" destination="MGJ-yh-XMP" id="sCG-eu-sXa"/>
-                        <outlet property="commentField" destination="c0J-z5-FcO" id="9zS-Sg-sH5"/>
+                        <outlet property="commentField" destination="8Cl-iv-zpC" id="QN6-e8-3YI"/>
                         <outlet property="courseField" destination="qOb-bh-3uj" id="EWl-kn-eyh"/>
                         <outlet property="difficultyField" destination="PXm-wX-Tza" id="1iL-wC-c7E"/>
                         <outlet property="gradeField" destination="mbX-s3-9cv" id="0dg-2m-ZmI"/>

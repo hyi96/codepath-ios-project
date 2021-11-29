@@ -23,23 +23,35 @@ class AddRatingViewController: UIViewController{
     @IBOutlet weak var attendanceField: UITextField!
     
     @IBOutlet weak var takeagainField: UITextField!
+        
+    @IBOutlet var commentField: UITextView!
     
-    @IBOutlet weak var commentField: UITextView!
+    
+    var professor = PFObject(className: "Professor")
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(professor["name"] as! String)
+    }
     
     
     @IBAction func onAddButton(_ sender: Any) {
         
         let rating = PFObject(className: "Rating")
-        let quality = Int(qualityField.text!)
-        let difficulty = Int(difficultyField.text!)
+        let quality = Int(qualityField.text!)!
+        let difficulty = Int(difficultyField.text!)!
         
-//        rating['toProfessor'] = ???
-        rating["author"] = PFUser.current()!
+        rating["author"] = PFUser.current()?.username as! String
         rating["courseName"] = courseField.text!
         rating["quarter"] = quarterField.text!
         rating["score"] = quality
         rating["difficulty"] = difficulty
         rating["grade"] = gradeField.text!
+        rating["comment"] = commentField.text!
+        
+        let relation = rating.relation(forKey: "toProfessor")
+        relation.add(professor)
         
         if (attendanceField.text! == "yes"){
             rating["attendance"] = true
@@ -47,40 +59,41 @@ class AddRatingViewController: UIViewController{
             rating["attendance"] = false
         }
         
+        var takeAgainCount = 0
         if (takeagainField.text! == "yes"){
             rating["toTakeAgain"] = true
+            takeAgainCount = 1
         } else {
             rating["toTakeAgain"] = false
         }
         
+        let currRating = professor["overallRating"] as! Double
+        let currDifficulty = professor["overallDifficulty"] as! Double
+        let currTakeAgain = professor["overallTakeAgain"] as! Double
+        let count = professor["ratingCount"] as! Double
+        professor["overallRating"] = (currRating * count + Double(quality)) / (count + 1)
+        professor["overallDifficulty"] = (currDifficulty * count + Double(difficulty)) / (count + 1)
+        professor["overallTakeAgain"] = (currTakeAgain/100.0 * count + Double(takeAgainCount)) / (count + 1) * 100.0
+        professor.incrementKey("ratingCount")
+        
         rating.saveInBackground {(success, error) in
             if success {
+                print("rating saved!")
+                self.professor.saveInBackground {(success, error) in
+                    if success {
+                        print("professor updated")
+                    } else {
+                        print("error")
+                    }
+                }
                 self.dismiss(animated: true, completion: nil)
-                print("saved!")
             } else{
                 print("error!")
             }
         }
-        
-        
-        
     }
-    
     
     @IBAction func onCancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

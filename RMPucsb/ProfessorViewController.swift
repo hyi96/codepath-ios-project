@@ -33,10 +33,10 @@ class ProfessorViewController: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = professor["name"] as! String
-        ratingScoreLabel.text = "\(professor["overallRating"] as! Float)"
+        ratingScoreLabel.text = "\(round(professor["overallRating"] as! Double * 10) / 10.0)"
         DeptNameLabel.text = department["name"] as! String
-        takeAgainPercentLabel.text = "\(professor["overallTakeAgain"] as! Float)"
-        DifficultyScoreLabel.text = "\(professor["overallDifficulty"] as! Float)"
+        takeAgainPercentLabel.text = "\(round(professor["overallTakeAgain"] as! Double * 10) / 10.0)"
+        DifficultyScoreLabel.text = "\(round(professor["overallDifficulty"] as! Double * 10) / 10.0)"
     }
     
 
@@ -44,8 +44,11 @@ class ProfessorViewController: UIViewController {
         if segue.identifier == "toRatingTable" {
             let ratingViewController = segue.destination as! RatingViewController
             ratingViewController.professor = professor
-            
+        }
+        
+        if segue.identifier == "toAddRatingScreen" {
+            let addRatingViewController = segue.destination as! AddRatingViewController
+            addRatingViewController.professor = professor
         }
     }
-    
 }
