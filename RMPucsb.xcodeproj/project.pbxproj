@@ -15,6 +15,7 @@
 		2400EB612745BFBB0082689E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2400EB5F2745BFBB0082689E /* LaunchScreen.storyboard */; };
 		243F9B69275200EE0093B086 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F9B68275200EE0093B086 /* RatingCell.swift */; };
 		243F9B6B275201120093B086 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F9B6A275201120093B086 /* RatingViewController.swift */; };
+		24864083275A0ABF001DF31D /* AddProfessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24864082275A0ABF001DF31D /* AddProfessorViewController.swift */; };
 		24D1BB452745C8F70095AD88 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB442745C8F70095AD88 /* LoginViewController.swift */; };
 		24D1BB492745C97E0095AD88 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB482745C97E0095AD88 /* DepartmentListViewController.swift */; };
 		24D1BB4B2745C9D90095AD88 /* ProfessorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1BB4A2745C9D90095AD88 /* ProfessorListViewController.swift */; };
@@ -38,6 +39,7 @@
 		2400EB622745BFBB0082689E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		243F9B68275200EE0093B086 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		243F9B6A275201120093B086 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		24864082275A0ABF001DF31D /* AddProfessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessorViewController.swift; sourceTree = "<group>"; };
 		24D1BB442745C8F70095AD88 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		24D1BB482745C97E0095AD88 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
 		24D1BB4A2745C9D90095AD88 /* ProfessorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorListViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				243F9B68275200EE0093B086 /* RatingCell.swift */,
 				243F9B6A275201120093B086 /* RatingViewController.swift */,
 				4818360F2752C72200F16F3F /* AddRatingViewController.swift */,
+				24864082275A0ABF001DF31D /* AddProfessorViewController.swift */,
 			);
 			path = RMPucsb;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				24D1BB452745C8F70095AD88 /* LoginViewController.swift in Sources */,
 				24D1BB4B2745C9D90095AD88 /* ProfessorListViewController.swift in Sources */,
 				24D1BB4F2745FB8F0095AD88 /* DepartmentCell.swift in Sources */,
+				24864083275A0ABF001DF31D /* AddProfessorViewController.swift in Sources */,
 				2400EB592745BFBB0082689E /* ViewController.swift in Sources */,
 				2400EB552745BFBB0082689E /* AppDelegate.swift in Sources */,
 				24D1BB4D2745F4D20095AD88 /* ProfessorViewController.swift in Sources */,

@@ -277,7 +277,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="professorNameLabel" destination="meM-SB-4o8" id="3az-Of-aDW"/>
-                                            <segue destination="diF-1d-7GY" kind="show" id="ISB-zj-qZD"/>
+                                            <segue destination="diF-1d-7GY" kind="show" identifier="toProfessorView" id="ISB-zj-qZD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -286,7 +286,13 @@
                         <viewLayoutGuide key="safeArea" id="JzJ-Mf-Uy4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="33x-CW-7KT"/>
+                    <navigationItem key="navigationItem" id="33x-CW-7KT">
+                        <barButtonItem key="rightBarButtonItem" title="Add  Professor" id="Hnl-t4-qae">
+                            <connections>
+                                <segue destination="fpa-k8-txe" kind="presentation" identifier="toAddProfessor" id="cV1-ns-eJF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Gtx-M2-AHA" id="U17-i7-brS"/>
                     </connections>
@@ -294,6 +300,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1q-pu-NCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2457" y="-481"/>
+        </scene>
+        <!--Add Professor View Controller-->
+        <scene sceneID="Q1I-yf-9dQ">
+            <objects>
+                <viewController id="fpa-k8-txe" customClass="AddProfessorViewController" customModule="RMPucsb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ycx-uA-hbA">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpW-H8-gka">
+                                <rect key="frame" x="16" y="20" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nd3-v3-Wcb">
+                                <rect key="frame" x="74" y="13" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83x-8f-Wof">
+                                <rect key="frame" x="16" y="157" width="127" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="on_cancel:" destination="fpa-k8-txe" eventType="touchUpInside" id="5NW-qE-feP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-q3-1B8">
+                                <rect key="frame" x="261" y="157" width="106" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="on_add:" destination="fpa-k8-txe" eventType="touchUpInside" id="RRs-L8-MVY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add to department of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-F4-D68">
+                                <rect key="frame" x="16" y="85" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DepartmentName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-FJ-YUQ">
+                                <rect key="frame" x="16" y="113" width="174" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SHi-sV-C9B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="departmentNameLabel" destination="sJq-FJ-YUQ" id="2Sc-zK-noI"/>
+                        <outlet property="nameLabel" destination="nd3-v3-Wcb" id="6WM-va-isq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27v-JY-dSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3321.5384615384614" y="-1252.6066350710901"/>
         </scene>
         <!--Add Rating View Controller-->
         <scene sceneID="Vdu-My-2u8">
@@ -461,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8Z-nH-8Ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3290.7692307692305" y="-481.27962085308053"/>
+            <point key="canvasLocation" x="3335" y="-481"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6BM-8F-diB">

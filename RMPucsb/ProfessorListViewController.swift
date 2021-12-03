@@ -47,15 +47,23 @@ class ProfessorListViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: cell)!
-        let professor = professors[indexPath.row]
-        
-        let professorViewController = segue.destination as! ProfessorViewController
-        professorViewController.professor = professor
-        professorViewController.department = department
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        if segue.identifier == "toProfessorView" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)!
+            let professor = professors[indexPath.row]
+            
+            let professorViewController = segue.destination as! ProfessorViewController
+            professorViewController.professor = professor
+            professorViewController.department = department
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        else if segue.identifier == "toAddProfessor" {
+            let addProfessorViewController = segue.destination as! AddProfessorViewController
+            addProfessorViewController.department = department
+        }
+
     }
+    
 
 }
