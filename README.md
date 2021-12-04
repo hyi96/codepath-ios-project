@@ -31,7 +31,6 @@ RateMyProf@UCSB is an app where users can flexibly search for the reviews of pro
  - [x] users can look up the ratings and comments of the professors 
  - [x] users can rate professors 
  - [x] users can add professors to departments
- - [ ] users can view key words of a rated professor
 
  **Optional Nice-to-have Stories**
 
