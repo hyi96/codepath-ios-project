@@ -13,7 +13,6 @@
 RateMyProf@UCSB is an app where users can flexibly search for the reviews of professors and the courses they teach. Students can use it as a guide for selecting classes and avoiding terrible professors.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** educational, productivity, entertainment
 - **Mobile:** iOS
 - **Story:** compare professors teaching the same course, departmental/school-wide ranking of professors., comment on a professor or on one of the courses they teach
